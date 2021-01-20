@@ -50,7 +50,17 @@ module.exports = (() => {
 
         cleanAll: () => {
             init()
-        }
+        },
+
+        cleanDisconnected: (user) => {
+            const _schedule = schedules.filter(p => p.user === user)
+            _schedule.map(schedule => {
+                schedule.isAvailable = true
+                schedule.user = null
+            })
+            return generateData()
+        },
+
     }
 
 })()

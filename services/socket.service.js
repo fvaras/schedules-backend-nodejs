@@ -1,5 +1,6 @@
 module.exports.connection = (socket, io) => (schedulesService) => {
 
+    console.log('connected', socket.id)
 
     socket.emit('update', schedulesService.getStatus())
 
@@ -8,5 +9,9 @@ module.exports.connection = (socket, io) => (schedulesService) => {
         io.emit('update', schedulesService.getStatus())
     })
 
-    socket.on('disconnect', () => { })
+    socket.on('disconnect', () => {
+        console.log('disconnected', socket.id)
+        schedulesService.cleanDisconnected(socket.id)
+        io.emit('update', schedulesService.getStatus())
+    })
 }
