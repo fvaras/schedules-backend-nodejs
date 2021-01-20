@@ -1,4 +1,5 @@
 const addMinutes = require('date-fns/addMinutes');
+const format = require('date-fns/format')
 
 module.exports = (() => {
     // schedules logic
@@ -10,10 +11,16 @@ module.exports = (() => {
         schedules = []
         const initialDate = new Date(2021, 1, 19, 8, 0)
         for (let i = 0; i < schedulesLength; i++) {
+            const start = addMinutes(initialDate, 30 * i)
+            const end = addMinutes(initialDate, 30 * (i + 1))
+            const formattedTime = `${format(start, 'HH:mm')} - ${format(end, 'HH:mm')}`
             schedules.push({
                 id: i + 1,
-                start: addMinutes(initialDate, 30 * i),
-                end: addMinutes(initialDate, 30 * (i + 1)),
+                start,//: addMinutes(initialDate, 30 * i),
+                end,//: addMinutes(initialDate, 30 * (i + 1)),
+                formattedTime,
+                // startFormat: format(addMinutes(initialDate, 30 * i), 'HH:mm'),
+                // endFormat: format(addMinutes(initialDate, 30 * (i + 1)), 'HH:mm'),
                 isAvailable: true,
                 user: null
             })
