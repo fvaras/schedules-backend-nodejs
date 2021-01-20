@@ -7,6 +7,7 @@ module.exports = (() => {
     const capacity = process.env.NUMBER_OF_RESOURCES || 8
 
     const init = () => {
+        schedules = []
         const initialDate = new Date(2021, 1, 19, 8, 0)
         for (let i = 0; i < schedulesLength; i++) {
             schedules.push({
