@@ -24,6 +24,12 @@ app.get('/', (req, res) => {
     res.send('Hello Worlds!')
 })
 
+app.post('/reset', (req, res) => {
+    schedulesService.cleanAll()
+    io.emit('update', schedulesService.getStatus())
+    res.send({ message: 'Reset data completed' })
+  })
+
 
 // listen
 server.listen(port, () => {

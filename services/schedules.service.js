@@ -40,6 +40,10 @@ module.exports = (() => {
 
             scheduleToUpdate.isAvailable = isAvailable
             scheduleToUpdate.user = isAvailable ? null : user
+        },
+
+        cleanAll: () => {
+            init()
         }
     }
 
