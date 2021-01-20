@@ -16,11 +16,9 @@ module.exports = (() => {
             const formattedTime = `${format(start, 'HH:mm')} - ${format(end, 'HH:mm')}`
             schedules.push({
                 id: i + 1,
-                start,//: addMinutes(initialDate, 30 * i),
-                end,//: addMinutes(initialDate, 30 * (i + 1)),
+                start,
+                end,
                 formattedTime,
-                // startFormat: format(addMinutes(initialDate, 30 * i), 'HH:mm'),
-                // endFormat: format(addMinutes(initialDate, 30 * (i + 1)), 'HH:mm'),
                 isAvailable: true,
                 user: null
             })
