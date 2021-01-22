@@ -1,2 +1,4 @@
-# App para primer desafío de HolaMundo - Reacciono a tu código
-App para primer desafío de HolaMundo - Reacciono a tu código
+# App para HolaMundo - Reacciono a tu código
+Tramos horarios.
+
+Backend en NodeJS
