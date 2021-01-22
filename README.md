@@ -1,4 +1,6 @@
 # App para HolaMundo - Reacciono a tu código
-Tramos horarios.
+Backend para tramos horarios.
 
-Backend en NodeJS
+Está construido en NodeJS
+
+Tiene un ep (/reset) para borrar todos los horarios tomados
