@@ -4,3 +4,4 @@ Backend para tramos horarios.
 Está construido en NodeJS
 
 Tiene un ep (/reset) para borrar todos los horarios tomados
+.
